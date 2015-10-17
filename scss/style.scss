@@ -1,0 +1,177 @@
+$bgColor : #006699;
+$bgColor2: #001133;
+$highlightNavBg: #e5e5e5;
+$highlightNav2: #d8d8d8;
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: $bgColor;
+  font-size:18px;
+}
+
+.singleButton {
+  position: fixed;
+  z-index: 9999;
+  padding: 15px;
+  opacity:0;
+  display:none;
+  
+  div {
+	  background-color: white;
+	  border-radius: 1px;
+	  height: 4px;
+	  width: 24px;
+	}
+	
+	div:not(:last-child) { margin-bottom: 5px; }
+}
+
+.singleButton:hover { cursor: pointer; }
+
+nav {
+  background-color: black;
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;			
+  padding:0;
+}
+
+nav .logo {
+  display:none;
+  margin: 40px auto;
+  text-align: center;
+  background-image: url("../images/bugs-bunny.png");
+  background-position:center;
+  background-size:cover;
+  border-radius: 50%;
+  height: 100px;
+  width:100px;
+}
+
+nav .logo p {
+  font-weight: 100;
+  font-size: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  padding: 5px 0;
+  width: 20%;
+  float:left;
+  line-height:40px;
+  font-size:0.8rem;
+  transition: background-color .2s ease-in;
+}
+
+nav a:visited { color: white; }
+
+nav a.active {
+  background-color:$bgColor2;
+  color: white;
+  font-weight:bold;
+}
+
+nav a:hover { 
+	background-color: $highlightNavBg; 
+	color:black; 
+	text-decoration: none;
+	transition: background-color .2s ease-out;	
+  }
+
+nav, .singleButton, .cover {
+  transition: transform .3s;
+}
+
+.sidenav-active nav, .sidenav-active .singleButton, .sidenav-active .cover {
+  transform: translateX(225px);
+}
+
+.main {
+  transition: margin-left .3s;
+}
+
+.sidenav-active .main { margin-left: 225px; }
+
+
+section {
+  color: white;
+  min-height: 800px;
+  padding: 70px 50px 50px 50px;
+  /* max-width:900px; */
+  display: flex;
+  flex-direction: row ;
+  flex-wrap: wrap;
+  align-content:space-around;
+  justify-content:center;
+  margin:auto;
+  font-size: 1rem;
+}
+
+section h1 { font-size: 1.6rem; }
+
+section h1, h2, section p { margin-bottom: 4px; }
+
+section div {
+  background-image: url("../images/bugs-bunny.png");
+  background-position:center;
+  background-size:cover;
+  border-radius: 50%;
+  height: 200px;
+  width:200px;
+  border: solid 3px black;
+  margin:20px;
+  transition: all .2s ease-out;
+}
+
+section div:hover {
+	box-shadow: 0px 0px 45px #fff;
+}
+
+@media screen and (max-width: 667px) {
+
+	html {
+		font-size:12px;
+	}
+	.singleButton{
+		opacity:1;
+		display:block;
+	}
+	
+	nav {
+	  display: inline-block;
+	  position: fixed;
+	  height: 100vh;
+	  width: 225px;
+	  left: -225px;
+	}
+	
+	nav .logo {
+		display:block;
+	}
+	
+	nav a {
+		color: white;
+		display: block;
+		width: 225px;
+		line-height:20px;
+		text-align:left;
+		padding-left:20px;
+	}
+	
+	nav a:visited { color: white; }
+	
+	nav a.active {
+	  background-color:$bgColor2;
+	  color: white;
+	  font-weight:bold;
+	}
+
+	nav a:hover { background-color: $highlightNav2; color:black;}
+	
+}

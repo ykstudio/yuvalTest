@@ -1,24 +1,21 @@
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html, body {
   margin: 0;
   font-family: sans-serif;
-  background-color: #34495E;
-  font-size:18px;
+  background-color: #006699;
+  font-size: 18px;
 }
 
-.singleButtonCont {
- 
-}
 .singleButton {
   position: fixed;
   z-index: 9999;
   padding: 15px;
-  opacity:0;
-  display:none;
+  opacity: 0;
+  display: none;
 }
-
-.singleButton:hover { cursor: pointer; }
 
 .singleButton div {
   background-color: white;
@@ -27,27 +24,33 @@ html, body {
   width: 24px;
 }
 
-.singleButton div:not(:last-child) { margin-bottom: 5px; }
+.singleButton div:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.singleButton:hover {
+  cursor: pointer;
+}
 
 nav {
   background-color: black;
   display: block;
   position: fixed;
   width: 100%;
-  left: 0;			
-  padding:0;
+  left: 0;
+  padding: 0;
 }
 
 nav .logo {
-  display:none;
+  display: none;
   margin: 40px auto;
   text-align: center;
   background-image: url("../images/bugs-bunny.png");
-  background-position:center;
-  background-size:cover;
+  background-position: center;
+  background-size: cover;
   border-radius: 50%;
   height: 100px;
-  width:100px;
+  width: 100px;
 }
 
 nav .logo p {
@@ -61,128 +64,140 @@ nav a {
   color: white;
   padding: 5px 0;
   width: 20%;
-  float:left;
-  line-height:40px;
-  font-size:0.8rem;
-    -webkit-transition: background-color .2s ease-in;
-  -moz-transition: background-color .2s ease-in;
-  -o-transition: background-color .2s ease-in;
-  transition: background-color .2s ease-in;	
+  float: left;
+  line-height: 40px;
+  font-size: 0.8rem;
+  -webkit-transition: background-color 0.2s ease-in;
+          transition: background-color 0.2s ease-in;
 }
 
-nav a:visited { color: white; }
+nav a:visited {
+  color: white;
+}
 
 nav a.active {
-  background-color:#001133;
+  background-color: #001133;
   color: white;
-  font-weight:bold;
+  font-weight: bold;
 }
 
-nav a:hover { 
-	background-color: #f5f5f5; 
-	color:black; 
-	text-decoration: none;
-  -webkit-transition: background-color .2s ease-out;
-  -moz-transition: background-color .2s ease-out;
-  -o-transition: background-color .2s ease-out;
-  transition: background-color .2s ease-out;	
-  }
+nav a:hover {
+  background-color: #e5e5e5;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-out;
+          transition: background-color 0.2s ease-out;
+}
 
 nav, .singleButton, .cover {
-  -webkit-transition: -webkit-transform .3s;
-  transition: transform .3s;
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
 }
 
 .sidenav-active nav, .sidenav-active .singleButton, .sidenav-active .cover {
   -webkit-transform: translateX(225px);
-  -ms-transform: translateX(225px);
-  transform: translateX(225px);
+      -ms-transform: translateX(225px);
+          transform: translateX(225px);
 }
 
 .main {
-  -webkit-transition: margin-left .3s;
-  transition: margin-left .3s;
+  -webkit-transition: margin-left 0.3s;
+          transition: margin-left 0.3s;
 }
 
-.sidenav-active .main { margin-left: 225px; }
-
+.sidenav-active .main {
+  margin-left: 225px;
+}
 
 section {
   color: white;
   min-height: 800px;
   padding: 70px 50px 50px 50px;
   /* max-width:900px; */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row ;
-  flex-wrap: wrap;
-  align-content:space-around;
-  margin:auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
   font-size: 1rem;
 }
 
-section h1 { font-size: 1.6rem; }
+section h1 {
+  font-size: 1.6rem;
+}
 
-section h1, h2, section p { margin-bottom: 4px; }
+section h1, h2, section p {
+  margin-bottom: 4px;
+}
 
 section div {
   background-image: url("../images/bugs-bunny.png");
-  background-position:center;
-  background-size:cover;
+  background-position: center;
+  background-size: cover;
   border-radius: 50%;
   height: 200px;
-  width:200px;
+  width: 200px;
   border: solid 3px black;
-  margin:20px;
-   
-  -webkit-transition: all .2s ease-out;
-  -moz-transition: all .2s ease-out;
-  -o-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  margin: 20px;
+  -webkit-transition: all 0.2s ease-out;
+          transition: all 0.2s ease-out;
 }
 
 section div:hover {
-	box-shadow: 0px 0px 45px #fff;
+  box-shadow: 0px 0px 45px #fff;
 }
 
 @media screen and (max-width: 667px) {
-
-	html {
-		font-size:12px;
-	}
-	.singleButton{
-		opacity:1;
-		display:block;
-	}
-	
-	nav {
-	  display: inline-block;
-	  position: fixed;
-	  height: 100vh;
-	  width: 225px;
-	  left: -225px;
-	}
-	
-	nav .logo {
-		display:block;
-	}
-	
-	nav a {
-		color: white;
-		display: block;
-		width: 225px;
-		line-height:20px;
-		text-align:left;
-		padding-left:20px;
-	}
-	
-	nav a:visited { color: white; }
-	
-	nav a.active {
-	  background-color:#001133;
-	  color: white;
-	  font-weight:bold;
-	}
-
-	nav a:hover { background-color: #d8d8d8; color:black;}
-	
+  html {
+    font-size: 12px;
+  }
+  .singleButton {
+    opacity: 1;
+    display: block;
+  }
+  nav {
+    display: inline-block;
+    position: fixed;
+    height: 100vh;
+    width: 225px;
+    left: -225px;
+  }
+  nav .logo {
+    display: block;
+  }
+  nav a {
+    color: white;
+    display: block;
+    width: 225px;
+    line-height: 20px;
+    text-align: left;
+    padding-left: 20px;
+  }
+  nav a:visited {
+    color: white;
+  }
+  nav a.active {
+    background-color: #001133;
+    color: white;
+    font-weight: bold;
+  }
+  nav a:hover {
+    background-color: #d8d8d8;
+    color: black;
+  }
 }
